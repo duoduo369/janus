@@ -69,6 +69,8 @@ done
     例如打开*.py 经常输入一些脚本的头什么的， 只要输入#！ 按下tab即可
     其他的快捷输入在文件~/.vim/janus/vim/tools/vim-snippets/snippets中
 
+`<leader>`是键盘上的 `\` 这个键(回车上面那个)
+
 * `<leader>fef` format the entire file
 * `<leader>u` Convert the entire word to uppercace.
 * `<leader>l` Convert the entire word to lowercase.
@@ -88,4 +90,44 @@ vim相关
 
 最新vim配置文件在[my_linux_configs](https://github.com/duoduo369/my_linux_configs) .vimrc.after 文件
 
-vim其他技巧 [kill_issue](https://github.com/duoduo369/skill_issues/tree/master/tools) 下的vim.issue.md
+vim其他技巧
+[kill_issue](https://github.com/duoduo369/skill_issues/blob/master/tools/vim.issue.md)
+下的vim.issue.md
+
+如何添加插件
+---
+创建 `~/.janus`文件夹，将插件目录对应的cp到这里即可
+
+If you want to do additional customization or add more Vim plugins,
+create a ~/.janus directory and add your plugins there, either with a
+git clone or by adding submodules to your own git repository there. This
+directory is treated like a normal pathogen directory. For example:
+```
+$ cd ~/.janus
+$ git clone https://github.com/vim-scripts/Rename2.git rename2
+```
+
+插件
+---
+### 快速打开文件
+
+#### ack快速打开文件, 需要安装
+
+dyng/ctrlsf.vim
+
+配置后`:map <C-f> :CtrlSF `,ctrl f输入关键词即可搜索
+
+搜索到的东西输入 ctrl t, ctrl p之类的在新窗口打开
+
+#### ctrl p
+内置的一个玩意儿，ctrl p后可以
+ctrl d改为之搜索文件名
+ctrl r为正则匹配
+ctrl z可以选中多个
+上下键盘移动文件名
+
+#### ctags快速跳转到定义
+
+配置后`set tags=tags;/`, 然后到项目根目录下执行`ctags -R`
+
+需要调整到方法定义时在方法或者类名上ctrl+]，跳回ctrl+o
