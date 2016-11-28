@@ -131,3 +131,24 @@ ctrl z可以选中多个
 配置后`set tags=tags;/`, 然后到项目根目录下执行`ctags -R`
 
 需要调整到方法定义时在方法或者类名上ctrl+]，跳回ctrl+o
+
+### 代码补全
+在janus里面这个插件在~/.vim/janus/vim/tools/vim-snippets/snippets下
+
+log print 调试
+
+    snippet le
+        logging.error(${0:msg})
+
+    # conflict with lambda=ld, therefor we change into Logger.debuG
+    snippet lg
+        import logging
+
+    snippet lw
+        logging.warning(${0:msg})
+
+    snippet lc
+        logging.critical(${0:msg})
+
+    snippet li
+        logging.info(${0:msg})
